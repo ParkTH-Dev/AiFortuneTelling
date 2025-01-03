@@ -5,8 +5,22 @@ import styled from "styled-components";
 
 const Container = styled.div`
   min-height: 100vh;
-  background: linear-gradient(to bottom, #44337a, #4a3b8b, #434190);
+  background: linear-gradient(135deg, #2d1b69, #4a1b8c, #1f1147);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   padding: 3rem 1rem;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 `;
 
 const Wrapper = styled.div`
@@ -15,15 +29,17 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1);
+  letter-spacing: 2px;
 
-  @media (min-width: 768px) {
-    font-size: 3rem;
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
   }
 `;
 
@@ -37,11 +53,13 @@ const Subtitle = styled.p`
 const ResultCard = styled.div`
   max-width: 48rem;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 0.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  padding: 2rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(138, 43, 226, 0.2);
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 `;
 
 const FortuneText = styled.pre`

@@ -7,11 +7,13 @@ const Form = styled.form`
 `;
 
 const FormCard = styled.div`
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 0.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  padding: 2rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(138, 43, 226, 0.2);
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 `;
 
 const FormContent = styled.div`
@@ -81,12 +83,13 @@ const CheckboxWrapper = styled.div`
   align-items: center;
   gap: 0.75rem;
   padding: 1rem;
-  border: 1px solid #e9d8fd;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s;
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 0.8rem;
+  transition: all 0.2s;
 
   &:hover {
-    background-color: #faf5ff;
+    background-color: rgba(138, 43, 226, 0.05);
+    border-color: rgba(138, 43, 226, 0.5);
   }
 `;
 
@@ -119,18 +122,19 @@ const Textarea = styled.textarea`
 
 const SubmitButton = styled.button`
   width: 100%;
-  padding: 1rem;
-  background: linear-gradient(to right, #805ad5, #434190);
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #9c4dcc, #4a1b8c);
   color: white;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 500;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+  transition: all 0.3s ease;
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+    background: linear-gradient(135deg, #b44dcc, #5a1b8c);
   }
 `;
 
