@@ -7,13 +7,25 @@ const Form = styled.form`
 `;
 
 const FormCard = styled.div`
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(138, 43, 226, 0.2);
-  padding: 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+    0 0 30px rgba(138, 43, 226, 0.2), inset 0 0 30px rgba(138, 43, 226, 0.05);
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #9c4dcc, #4a1b8c, #9c4dcc);
+  }
 `;
 
 const FormContent = styled.div`
@@ -127,14 +139,37 @@ const SubmitButton = styled.button`
   color: white;
   font-size: 1.25rem;
   font-weight: 500;
-  border-radius: 0.8rem;
-  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+  }
 
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
     background: linear-gradient(135deg, #b44dcc, #5a1b8c);
+
+    &::before {
+      left: 100%;
+    }
   }
 `;
 

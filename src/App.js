@@ -5,10 +5,27 @@ import styled from "styled-components";
 
 const Container = styled.div`
   min-height: 100vh;
-  background: linear-gradient(135deg, #2d1b69, #4a1b8c, #1f1147);
+  background: linear-gradient(45deg, #1a0b2e, #321b5a, #1a0b2e);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
 
   @keyframes gradient {
     0% {
@@ -29,14 +46,29 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 1rem;
   color: white;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
-    0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1);
-  letter-spacing: 2px;
+    0 0 20px rgba(138, 43, 226, 0.2), 0 0 30px rgba(138, 43, 226, 0.1);
+  letter-spacing: 4px;
+  background: linear-gradient(to right, #fff, #e9d8fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(138, 43, 226, 0.2), 0 0 30px rgba(138, 43, 226, 0.1);
+    }
+    to {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.4),
+        0 0 30px rgba(138, 43, 226, 0.3), 0 0 40px rgba(138, 43, 226, 0.2);
+    }
+  }
 
   @media (max-width: 768px) {
     font-size: 2.5rem;
@@ -53,13 +85,25 @@ const Subtitle = styled.p`
 const ResultCard = styled.div`
   max-width: 48rem;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(138, 43, 226, 0.2);
-  padding: 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+    0 0 30px rgba(138, 43, 226, 0.2), inset 0 0 30px rgba(138, 43, 226, 0.05);
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #9c4dcc, #4a1b8c, #9c4dcc);
+  }
 `;
 
 const FortuneText = styled.pre`
