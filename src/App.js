@@ -14,17 +14,19 @@ const Container = styled.div`
 
   &::before {
     content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-      circle at 50% 50%,
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 50%
-    );
-    pointer-events: none;
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow: 0 0 20px white,
+      ${[...Array(50)]
+          .map(() => {
+            const x = Math.floor(Math.random() * 100);
+            const y = Math.floor(Math.random() * 100);
+            return `${x}vw ${y}vh 1px rgba(255, 255, 255, 0.8),`;
+          })
+          .join("")}
+        0 0 0 transparent;
   }
 
   @keyframes gradient {
@@ -88,21 +90,23 @@ const ResultCard = styled.div`
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   border-radius: 1.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(138, 43, 226, 0.2), inset 0 0 30px rgba(138, 43, 226, 0.05);
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
   padding: 3rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
-  overflow: hidden;
 
-  &::before {
+  &::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(to right, #9c4dcc, #4a1b8c, #9c4dcc);
+    inset: 0;
+    border-radius: 1.5rem;
+    padding: 2px;
+    background: linear-gradient(45deg, #9c4dcc, transparent, #4a1b8c);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
   }
 `;
 
