@@ -60,6 +60,7 @@ const Title = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: glow 2s ease-in-out infinite alternate;
+  font-family: "Noto Serif KR", serif;
 
   @keyframes glow {
     from {
@@ -94,6 +95,7 @@ const ResultCard = styled.div`
   padding: 3rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
+  font-family: "Noto Serif KR", serif;
 
   &::after {
     content: "";
