@@ -115,9 +115,12 @@ const ResultCard = styled.div`
 const FortuneText = styled.pre`
   white-space: pre-wrap;
   color: #2d3748;
-  font-family: sans-serif;
-  line-height: 1.7;
+  font-family: "Noto Serif KR", serif;
+  line-height: 2;
   font-size: 1.125rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1rem;
 `;
 
 const ButtonContainer = styled.div`
@@ -126,17 +129,19 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(to right, #805ad5, #434190);
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #9c4dcc, #4a1b8c);
   color: white;
   border-radius: 9999px;
   font-weight: 500;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+  transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4);
+    background: linear-gradient(135deg, #b44dcc, #5a1b8c);
   }
 `;
 
@@ -155,13 +160,14 @@ const LoadingContent = styled.div`
 `;
 
 const Spinner = styled.div`
-  width: 4rem;
-  height: 4rem;
-  border: 4px solid #805ad5;
+  width: 5rem;
+  height: 5rem;
+  border: 5px solid #9c4dcc;
   border-top-color: transparent;
   border-radius: 50%;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.5rem;
   animation: spin 1s linear infinite;
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
 
   @keyframes spin {
     to {
