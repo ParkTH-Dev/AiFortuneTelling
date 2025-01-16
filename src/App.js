@@ -61,6 +61,19 @@ const Title = styled.h1`
   -webkit-text-fill-color: transparent;
   animation: glow 2s ease-in-out infinite alternate;
   font-family: "Noto Serif KR", serif;
+  position: relative;
+
+  &::after {
+    content: "2025";
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    font-size: 1rem;
+    color: #e9d8fd;
+    -webkit-text-fill-color: #e9d8fd;
+    text-shadow: none;
+    opacity: 0.8;
+  }
 
   @keyframes glow {
     from {
@@ -118,9 +131,16 @@ const FortuneText = styled.pre`
   font-family: "Noto Serif KR", serif;
   line-height: 2;
   font-size: 1.125rem;
-  padding: 1rem;
+  padding: 2rem;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 1rem;
+  box-shadow: inset 0 0 20px rgba(138, 43, 226, 0.1);
+  margin-bottom: 1rem;
+
+  & strong {
+    color: #4a1b8c;
+    font-weight: 600;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -167,7 +187,17 @@ const Spinner = styled.div`
   border-radius: 50%;
   margin: 0 auto 1.5rem;
   animation: spin 1s linear infinite;
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3),
+    inset 0 0 15px rgba(138, 43, 226, 0.1);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    border: 2px solid rgba(138, 43, 226, 0.2);
+  }
 
   @keyframes spin {
     to {
@@ -179,6 +209,8 @@ const Spinner = styled.div`
 const LoadingText = styled.div`
   color: white;
   font-size: 1.25rem;
+  font-family: "Noto Serif KR", serif;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
 `;
 
 const LoadingSubtext = styled.span`
