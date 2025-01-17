@@ -131,7 +131,7 @@ const FortuneText = styled.pre`
   font-family: "Noto Serif KR", serif;
   line-height: 2;
   font-size: 1.125rem;
-  padding: 2rem;
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 1rem;
   box-shadow: inset 0 0 20px rgba(138, 43, 226, 0.1);
@@ -187,8 +187,7 @@ const Spinner = styled.div`
   border-radius: 50%;
   margin: 0 auto 1.5rem;
   animation: spin 1s linear infinite;
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3),
-    inset 0 0 15px rgba(138, 43, 226, 0.1);
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
   position: relative;
 
   &::after {
